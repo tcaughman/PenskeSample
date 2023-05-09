@@ -1,0 +1,16 @@
+﻿@using PenskeSampleSdk.Shared.ViewModel_Dto;
+
+<div class="col-2 col-sm-12 col-md-2">
+    <div class="event-month">@RaceScheduleDto.RaceDateFormat.AbbreviatedMonth</div>
+    <div class="event-date">@RaceScheduleDto.RaceDateFormat.Day</div>
+</div>
+<div class="col-10 col-sm-12 col-md-10">
+    <div class="event-name">@RaceScheduleDto.RaceEventName</div>
+    <div class="event-track">@RaceScheduleDto.RaceEventTrackName</div>
+    <div class="event-track">Laps: @RaceScheduleDto.ScheduledLaps</div>
+    <div class="event-track">Distance: @RaceScheduleDto.ScheduledDistance</div>
+    <div class="event-time">@RaceScheduleDto.RaceDateFormat.TimeAmPM</div>
+</div>
+<hr />
+
+

@@ -1,0 +1,49 @@
+﻿@page "/nascarSchedule"
+@using PenskeSampleSdk.Shared.ViewModel_Dto;
+@inject HttpClient Http
+
+
+<PageTitle>Nascar Schedule</PageTitle>
+<div class="container-fluid"><h1>Nascar Schedule</h1></div>
+
+@if (raceSeriesScheduleDto == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Race Series Id</th>
+                <th>RaceId</th>
+                <th>RaceEventName</th>
+                <th>RaceEventTrackName</th>
+                <th>ScheduledLaps</th>
+                <th>ScheduledDistance</th>
+                <th>Date Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var eachSeriesSched in raceSeriesScheduleDto)
+            {
+
+                @foreach (var item in eachSeriesSched.RaceSchedules)
+                {
+                    <tr>
+                        <td>@eachSeriesSched.RaceSeriesTypeEnum</td>
+                        <td>@item.RaceId</td>
+                        <td>@item.RaceEventName</td>
+                        <td>@item.RaceEventTrackName</td>
+                        <td>@item.ScheduledLaps</td>
+                        <td>@item.ScheduledDistance</td>
+                        <td>@($"{item.RaceDateFormat?.DayAsText} {item?.DateScheduled.Value.Day} {item.RaceDateFormat?.AbbreviatedMonth?.ToUpper()} {item?.RaceDateFormat?.TimeAmPM}")</td>
+                       
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+}
+
+

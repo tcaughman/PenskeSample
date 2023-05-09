@@ -1,0 +1,25 @@
+﻿@page "/nascarScheduleCards"
+@using PenskeSampleSdk.Shared.ViewModel_Dto;
+@inject HttpClient Http
+
+
+<PageTitle>Nascar Schedule Cards</PageTitle>
+<div class="container-fluid"><h1>Nascar Schedule</h1></div>
+
+@if (RaceSeriesScheduleDto == null)
+{
+    <div class="container-fluid event-container"><em>Loading...</em></div>
+}
+else
+{
+    <div class="container-fluid event-container">
+        <div class="row">
+            @foreach (var item in RaceSeriesScheduleDto)
+            {
+                <EventColumn RaceSeriesScheduleDto="@item" BackgroundColor="@GetColor" />
+            }                      
+        </div>
+    </div>
+}
+
+

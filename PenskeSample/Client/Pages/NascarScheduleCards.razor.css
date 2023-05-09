@@ -1,0 +1,55 @@
+﻿.event-container {
+    background-color: #404040;
+    color: #fff;
+    padding: 20px 30px;
+    text-transform: uppercase;
+}
+
+.series-title {
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.33);
+    color: black;
+    margin-bottom: 25px;
+    padding: 10px 20px;
+}
+
+.event-column {
+    box-shadow: 0 0 35px black;
+    margin: 0 30px;
+}
+
+    .event-column .event-row hr {
+        margin: 1rem 0;
+    }
+
+    .event-column .event-row:last-child hr {
+        margin-bottom: 0;
+    }
+
+.event-row {
+}
+
+.event-month {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.event-date {
+    font-size: 26px;
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+}
+
+.event-name {
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.event-track {
+    font-weight: 600;
+}
+
+.event-time {
+    margin-bottom: 20px;
+}
